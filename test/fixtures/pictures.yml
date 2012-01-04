@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  category: MyString
+  like: false
+  like_at: 2011-12-23 16:18:20
+  id_user: 1
+
+two:
+  name: MyString
+  category: MyString
+  like: false
+  like_at: 2011-12-23 16:18:20
+  id_user: 1

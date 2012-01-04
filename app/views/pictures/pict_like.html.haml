@@ -1,0 +1,6 @@
+%br
+  - @pictures.each do |picture|
+    = image_tag picture.logo.url(:thumb)
+= will_paginate @pictures
+%br
+%br

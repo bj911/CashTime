@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  signin_at: 2011-12-29 15:17:51
+  signout_at: 2011-12-29 15:17:51
+  link: MyString
+  link_at: 2011-12-29 15:17:51
+
+two:
+  user_id: 1
+  signin_at: 2011-12-29 15:17:51
+  signout_at: 2011-12-29 15:17:51
+  link: MyString
+  link_at: 2011-12-29 15:17:51

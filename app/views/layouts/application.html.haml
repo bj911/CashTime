@@ -1,0 +1,53 @@
+!!!
+%html
+  %head
+    %title Z3
+    = stylesheet_link_tag 'web_app_theme'
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
+  %body
+    #container
+      #header
+        %h1
+          %a{:href => "/"} Cash Time
+        #user-navigation
+          -if !user_signed_in?
+            %ul.wat-cf
+              %li
+                %a
+                  =link_to "Sign in", new_user_session_path
+              %li
+                %a
+                  =link_to "Sign up", new_user_registration_path
+          -if user_signed_in?
+            %ul.wat-cf
+              %li
+                %a
+                  =link_to "Categories", categories_path
+              %li
+                %a
+                  =link_to "Pictures (likes)", pict_like_path
+              %li
+                %a
+                  =link_to "Comments (created_at)", comment_date_path
+              %li
+                %a
+                  =link_to "Events", events_path
+              %li
+                %a
+                  =link_to "Logout", logout_path
+        #main-navigation
+          %ul.wat-cf
+      #wrapper.wat-cf
+        .flash
+          - flash.each do |type, message|
+            %div{:class => "message #{type}"}
+              %p= message
+        #main
+          = yield
+          #footer
+            .block
+              %p
+                Copyright &copy; #{Time.now.year} Web App.
+        #sidebar
+          = yield :sidebar

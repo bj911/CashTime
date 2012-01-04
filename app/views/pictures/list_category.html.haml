@@ -1,0 +1,7 @@
+%br
+  - @pictures.each do |picture|
+    - if picture.category==params[:category]
+      = link_to image_tag("#{picture.logo.url(:thumb)}"), "#{picture.category}/#{picture.id}"
+= will_paginate @pictures
+%br
+%br

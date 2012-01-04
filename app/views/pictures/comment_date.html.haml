@@ -1,0 +1,11 @@
+%br
+  - @comments.each do |comment|
+    %br
+      = image_tag comment.picture.logo.url(:thumb)
+      = link_to "Comment:  #{comment.text}      Create Time:  #{comment.created_at}", '#'
+= will_paginate @comments
+%br
+%br
+
+
+

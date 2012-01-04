@@ -1,0 +1,33 @@
+= link_to "#{@user.email}", 'categories/cats'
+%br
+
+- if (@info=='navigation') and (@events!=nil)
+  - @events.each do |event|
+    - if event.link!=nil
+      %br
+      = link_to "#{event.link}____#{event.link_at}", '#'
+
+- if (@info=='user_sign_in') and (@events!=nil)
+  - @events.each do |event|
+    - if event.signin_at!=nil
+      %br
+      = link_to "#{event.signin_at}", '#'
+
+- if (@info=='user_sign_out') and (@events!=nil)
+  - @events.each do |event|
+    - if event.signout_at!=nil
+      %br
+      = link_to "#{event.signout_at}", '#'
+
+- if (@info=='likes') and (@likes!=nil)
+  - @likes.each do |like|
+    %br
+    = image_tag like.picture.logo.url(:thumb)
+    = link_to "#{like.picture.name}____#{like.created_at}", '#'
+
+- if (@info=='comments') and (@comments!=nil)
+  - @comments.each do |comment|
+    %br
+    = image_tag comment.picture.logo.url(:thumb)
+    = link_to "#{comment.picture.name}____#{comment.text}____#{comment.created_at}", '#'
+
