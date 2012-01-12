@@ -206,4 +206,17 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
+
+  #Warden::Manager.after_authentication do |user|
+  #  if user.is_a?(User)
+  #    user.add_sign_in
+  #  end
+  #end
+
+  Warden::Manager.before_logout do |user|
+    if user.is_a?(User)
+      user.add_sign_out
+    end
+  end
+
 end

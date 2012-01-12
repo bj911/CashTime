@@ -1,17 +1,17 @@
 %br
 = form_for(:comment, :url => comments_path(:picture_id => @picture.id)) do |f|
-  = image_tag("#{@picture.category}/#{@picture.name}")
-  - if Like.find_by_user_id_and_picture_id(current_user.id, @picture.id)==nil
-    = link_to 'Add likes', like_set_path(@picture.id), :method => :post
-  - else
+  = link_to image_tag("#{@picture.logo.url(:big)}")
+  - if @picture.liked?(current_user.id)
     %a 'L I K E S'
+  - else
+    = link_to 'Add likes', like_set_path(@picture.id), :method => :post
   = f.text_area :text
   = f.submit
 %br
 - @comments.each do |comment|
   - if comment.picture_id == @picture.id
     %br
-    = link_to "#{comment.text}", "#"
+    %strong User = #{comment.user.email} --- Comment = #{comment.text} --- Created_at = #{Time.now}
 
 
 

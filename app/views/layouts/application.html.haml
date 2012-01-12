@@ -23,7 +23,7 @@
             %ul.wat-cf
               %li
                 %a
-                  =link_to "Categories", categories_path
+                  =link_to "Categories", root_path
               %li
                 %a
                   =link_to "Pictures (likes)", pict_like_path
@@ -32,10 +32,10 @@
                   =link_to "Comments (created_at)", comment_date_path
               %li
                 %a
-                  =link_to "Events", events_path
+                  =link_to "Events",  events_path
               %li
                 %a
-                  =link_to "Logout", logout_path
+                  =link_to "Logout - #{current_user.email}", destroy_user_session_path,  :method => :delete
         #main-navigation
           %ul.wat-cf
       #wrapper.wat-cf

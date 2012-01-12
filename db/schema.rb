@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111229131751) do
+ActiveRecord::Schema.define(:version => 20120106094431) do
 
   create_table "comments", :force => true do |t|
     t.integer  "picture_id"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20111229131751) do
     t.datetime "link_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "event_type"
+    t.string   "info"
   end
 
   create_table "likes", :force => true do |t|

@@ -1,6 +1,7 @@
 %br
   - @pictures.each do |picture|
-    = image_tag picture.logo.url(:thumb)
+    = link_to image_tag("#{picture.logo.url(:thumb)}"), "categories/#{picture.category}/#{picture.id}"
+    %a likes: #{picture.count_like}
 = will_paginate @pictures
 %br
 %br

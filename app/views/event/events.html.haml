@@ -1,0 +1,9 @@
+%br
+- @users.each do |user|
+  %br
+  %ul.wat-cf
+    %li
+      %strong #{user.email}
+    - ["navigation","user_sign_in","user_sign_out","likes","comments"].each do |path|
+      %li
+        =link_to "#{path}", "events/#{path}/#{user.id}"

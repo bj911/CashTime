@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
-  def index
 
+  def categories
   end
+
 end
